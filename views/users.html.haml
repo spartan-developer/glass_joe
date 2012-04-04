@@ -1,0 +1,7 @@
+%a(href="users/new") New User
+- users.each do |user|
+  .user
+    %a(href="/users/#{user['_id']}")= user['name']
+  %form(action="/users/#{user['_id']}" method="post")
+    %input(type="hidden" name="_method" value="DELETE")
+    %input(type="submit" value="delete")
